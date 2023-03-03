@@ -1,9 +1,14 @@
-.header {
+.main {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 65px;
   color: #fff;
+
+  img {
+    height: 45px;
+    flex-direction: row;
+  }
 
   &-search {
     margin-bottom: 64px;
@@ -11,11 +16,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
-
-  &-text {
-    margin-bottom: 32px;
-    text-align: center;
   }
 
   &-input {
@@ -31,5 +31,39 @@
     &:placeholder {
       color: #e2e2e2;
     }
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  &-text {
+    margin-bottom: 32px;
+    text-align: center;
+  }
+}
+
+.headerpic {
+  margin-bottom: 32px;
+  margin-right: 12px;
+}
+
+@media (max-width: 830px) {
+  .container-text {
+    font-size: 36px;
+  }
+  .headerpic {
+    height: 36px;
+  }
+}
+
+@media (max-width: 630px) {
+  .container-text {
+    font-size: 20px;
+  }
+  .headerpic {
+    height: 20px;
   }
 }

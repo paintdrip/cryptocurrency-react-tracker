@@ -68,3 +68,37 @@
     }
   }
 }
+
+@media (max-width: 1105px) {
+  .coin-row {
+    width: 800px;
+  }
+  .coin-volume {
+    display: none;
+  }
+}
+
+@media (max-width: 830px) {
+  .coin-row {
+    width: 600px;
+  }
+  .coin-unit {
+    min-width: 120px;
+
+    h1 {
+      display: none;
+    }
+  }
+  .coin-percent {
+    width: 60%;
+  }
+}
+
+@media (max-width: 630px) {
+  .coin-row {
+    width: 300px;
+  }
+  .coin-marketcap {
+    display: none;
+  }
+}

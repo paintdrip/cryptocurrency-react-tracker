@@ -28,16 +28,14 @@ function App() {
   });
 
   return (
-    <div className="header">
-      <div className="header-search">
-        <h1 className="header-text">Cryptocurrency Price Tracker</h1>
+    <div className="main">
+      <div className="main-search">
+        <div className="container">
+          <img src="logo512.png" className="headerpic" alt="headerpic" />
+          <h1 className="container-text">Cryptocurrency Price Tracker</h1>
+        </div>
         <form>
-          <input
-            type="text"
-            placeholder="Search"
-            className="header-input"
-            onChange={handleChange}
-          />
+          <input type="text" placeholder="Search" className="main-input" onChange={handleChange} />
         </form>
       </div>
       {filteredCoins.map((coin) => {
