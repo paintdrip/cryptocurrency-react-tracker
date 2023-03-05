@@ -15,9 +15,24 @@ function App() {
       )
       .then((response) => {
         setCoins(response.data);
+        startAutoUpdate();
       })
       .catch((error) => console.log(error));
   }, []);
+
+  function startAutoUpdate() {
+    setInterval(() => {
+      axios
+        .get(
+          'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false',
+        )
+        .then((response) => {
+          console.log(response.data);
+          setCoins(response.data);
+        })
+        .catch((error) => console.log(error));
+    }, 15000);
+  }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
