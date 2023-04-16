@@ -7,6 +7,7 @@ import Coin from './components/Coin';
 function App() {
   const [coins, setCoins] = useState<any[]>([]);
   const [search, setSearch] = useState('');
+  const [theme, setTheme] = useState(false);
 
   React.useEffect(() => {
     axios
@@ -43,31 +44,41 @@ function App() {
   });
 
   return (
-    <div className="main">
-      <div className="main-search">
-        <div className="container">
-          <img src="logo512.png" className="headerpic" alt="headerpic" />
-          <h1 className="container-text">Cryptocurrency Price Tracker</h1>
-        </div>
-        <form>
-          <input type="text" placeholder="Search" className="main-input" onChange={handleChange} />
-        </form>
+    <section className={theme ? 'theme-white' : ''}>
+      <div className="setting-theme">
+        <input type="checkbox" onChange={() => setTheme(!theme)} />
       </div>
-      {filteredCoins.map((coin) => {
-        return (
-          <Coin
-            key={coin.id}
-            name={coin.name}
-            image={coin.image}
-            symbol={coin.symbol}
-            marketcap={coin.market_cap}
-            price={coin.current_price}
-            priceChange={coin.price_change_percentage_24h}
-            volume={coin.total_volume}
-          />
-        );
-      })}
-    </div>
+      <div className="main">
+        <div className="main-search">
+          <div className="container">
+            <img src="logo512.png" className="headerpic" alt="headerpic" />
+            <h1 className="container-text">Cryptocurrency Price Tracker</h1>
+          </div>
+          <form>
+            <input
+              type="text"
+              placeholder="Search"
+              className="main-input"
+              onChange={handleChange}
+            />
+          </form>
+        </div>
+        {filteredCoins.map((coin) => {
+          return (
+            <Coin
+              key={coin.id}
+              name={coin.name}
+              image={coin.image}
+              symbol={coin.symbol}
+              marketcap={coin.market_cap}
+              price={coin.current_price}
+              priceChange={coin.price_change_percentage_24h}
+              volume={coin.total_volume}
+            />
+          );
+        })}
+      </div>
+    </section>
   );
 }
 

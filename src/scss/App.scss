@@ -1,6 +1,26 @@
 @import 'All.scss';
 @import 'Header.scss';
 
+:root {
+  --textcolor: #e2e2e2;
+  --bgcolor: #1a1a1c;
+}
+
+.theme-white {
+  --textcolor: #1a1a1c;
+  --bgcolor: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Quicksand', sans-serif;
+  background-color: var(--bgcolor);
+  color: var(--textcolor);
+  list-style: none;
+}
+
 .coin {
   display: flex;
   justify-content: center;
