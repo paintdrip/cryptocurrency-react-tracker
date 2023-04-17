@@ -45,22 +45,25 @@ function App() {
 
   return (
     <section className={theme ? 'theme-white' : ''}>
-      <div className="setting-theme">
-        <input type="checkbox" onChange={() => setTheme(!theme)} />
-      </div>
       <div className="main">
         <div className="main-search">
           <div className="container">
             <img src="logo512.png" className="headerpic" alt="headerpic" />
             <h1 className="container-text">Cryptocurrency Price Tracker</h1>
           </div>
-          <form>
+          <form className="form-class">
             <input
               type="text"
               placeholder="Search"
               className="main-input"
               onChange={handleChange}
             />
+            <div className="settings-input">
+              <p className="change-text">Change theme</p>
+              <label className="checkbox-circ">
+                <input type="checkbox" className="input" onChange={() => setTheme(!theme)} />
+              </label>
+            </div>
           </form>
         </div>
         {filteredCoins.map((coin) => {
